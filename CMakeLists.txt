@@ -1,0 +1,6 @@
+cmake_minimum_required (VERSION 3.0)
+project(csv-rw)
+add_executable (csv-rw main.cxx)
+configure_file (data.csv data.csv COPYONLY)
+add_library (fileio fileio.cxx)
+target_link_libraries(csv-rw fileio)
