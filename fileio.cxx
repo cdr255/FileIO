@@ -4,6 +4,9 @@ FileIO::FileIO(std::string file, std::string delim)
 {
   ip.open(file);
   delimiter = delim;
+  if (!ip.is_open())
+    printf("Error opening %s!\n", file.c_str());
+  
 }
 
 FileIO::~FileIO()
