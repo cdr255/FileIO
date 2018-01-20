@@ -3,8 +3,9 @@
 int main (int argc, char * argv[])
 {
   
-  FileIO Loader ("data.csv",",");
-  Loader.parsefile(Loader.ip, Loader.delimiter);
+  FileIO Loader ("data.csv",",",4);
+  //  Loader.parsefile();
+  Loader.savefile();
   return 0;
 }
 

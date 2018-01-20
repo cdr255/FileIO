@@ -6,10 +6,12 @@
 
 class FileIO {
 public:
-  std::fstream ip;
+  std::fstream file;
   std::vector<std::string> values;
-  std::string delimiter;
-  bool parsefile (std::fstream&, std::string);
-  FileIO(std::string,std::string);
+  std::string delimiter,filename;
+  int rowsize;
+  bool parsefile ();
+  bool savefile ();
+  FileIO(std::string,std::string,int);
   ~FileIO();
 };
