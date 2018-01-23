@@ -15,5 +15,6 @@ private:
   std::vector<std::string> values;
   std::string delimiter,filename;
   int rowsize;
+  int entries;
   bool parsefile ();
 };

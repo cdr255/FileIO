@@ -41,8 +41,10 @@ bool FileIO::parsefile ()
 	  values.push_back(line);      
 	}
       file.clear();
+      entries = values.size() / rowsize;
       return true;
     }
+ 
 }
 
 bool FileIO::savefile ()
@@ -51,8 +53,7 @@ bool FileIO::savefile ()
   std::string output = "";
   printf("Number of Values Loaded: %d\n", values.size());
   printf("Number of Rows to Write: %d\n", values.size() / rowsize);
-  int rows = values.size() / rowsize;
-  for(int rowcounter=0;rowcounter < rows;rowcounter++)
+  for(int rowcounter=0;rowcounter < entries;rowcounter++)
     {
       for(int counter=0;counter < rowsize;counter++)
 	{
@@ -76,12 +77,20 @@ bool FileIO::savefile ()
 std::vector<std::string> FileIO::getentry(int entrynumber)
 {
   std::vector<std::string> entry;
-  int offset = (entrynumber - 1) * rowsize ;
-  for (int counter = offset;counter < offset + rowsize;counter++)
+  if (entrynumber > entries)
     {
-      printf("Entry Item: %s\n", values[counter].c_str());
-      entry.push_back(values[counter]);
+      printf("Error: Tried to Access Nonexistant entry from File %s", filename.c_str());
+      return entry;
     }
-  printf("Accessed entry %d of file %s\n", offset, filename.c_str());
-  return entry;
+  else
+    {
+      int offset = (entrynumber - 1) * rowsize ;
+      for (int counter = offset;counter < offset + rowsize;counter++)
+	{
+	  printf("Entry Item: %s\n", values[counter].c_str());
+	  entry.push_back(values[counter]);
+	}
+      printf("Accessed entry %d of file %s\n", offset, filename.c_str());
+      return entry;
     }
+}
