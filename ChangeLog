@@ -1,3 +1,4 @@
+<!-- -*-markdown-*->
 # Changelog
 All notable changes to this project will be documented in this file.
 
@@ -8,11 +9,21 @@ and this project adheres to [Semantic Versioning][SemVer].
 
 ### Added
 
+### Fixed
+
+
+## [0.1.2] - 2018-01-22
+
+### Added
+
 - Able to return single entry from loaded CSV file.
+- Compiles to Shared Library.
+- Pkgconfig support.
 
 ### Fixed
 
 - Updated this ChangeLog.
+- Gracefully Errors on Failed Entry Access.
 
 ## [0.1.1] - 2018-01-19
 
@@ -39,6 +50,7 @@ and this project adheres to [Semantic Versioning][SemVer].
 - Removed Global Variables.
 - Dropped namespace calls.
 
+[0.1.2]: https://github.com/cdr255/FileIO/releases/tag/v0.1.2
 [0.1.1]: https://github.com/cdr255/FileIO/releases/tag/v0.1.1
 [0.1.0]: https://github.com/cdr255/FileIO/releases/tag/v0.1.0
 [SemVer]: http://semver.org/spec/v2.0.0.html
