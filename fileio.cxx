@@ -19,7 +19,7 @@ bool FileIO::parsefile ()
   file.open(filename, std::fstream::in );
   if (!file.is_open())
     {
-      printf("File %s not open for parsing!\n", filename);
+      printf("File %s not open for parsing!\n", filename.c_str());
       return false;
     }
   else
