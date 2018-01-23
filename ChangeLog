@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning][SemVer].
 
 ### Added
 
+- Able to return single entry from loaded CSV file.
+
 ### Fixed
 
 - Updated this ChangeLog.

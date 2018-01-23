@@ -71,3 +71,17 @@ bool FileIO::savefile ()
   file.close();
   return true;
 }
+
+
+std::vector<std::string> FileIO::getentry(int entrynumber)
+{
+  std::vector<std::string> entry;
+  int offset = (entrynumber - 1) * rowsize ;
+  for (int counter = offset;counter < offset + rowsize;counter++)
+    {
+      printf("Entry Item: %s\n", values[counter].c_str());
+      entry.push_back(values[counter]);
+    }
+  printf("Accessed entry %d of file %s\n", offset, filename.c_str());
+  return entry;
+    }
