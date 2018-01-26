@@ -95,3 +95,24 @@ std::vector<std::string> FileIO::getentry(int entrynumber)
     }
 }
 
+
+bool FileIO::storeentry(int entrynumber, std::vector<std::string>& entry)
+{
+  if (entrynumber > entries)
+    {
+      printf("Error: Tried to Access Nonexistant entry from File %s", filename.c_str());
+      return false;
+    }
+  else
+    {
+      int offset = (entrynumber - 1) * rowsize ;
+      int entryoffset = 0;
+      for (int counter = offset; counter < offset + rowsize;counter++)
+	{
+	  values.at(counter) = entry.at(entryoffset);
+	  printf("Entry #%d: Replaced '%s' with '%s'. \n", entrynumber, values[counter].c_str(), entry[entryoffset].c_str());
+	  entryoffset++;
+	}
+      return true;
+    }
+}

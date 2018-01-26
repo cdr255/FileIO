@@ -7,6 +7,7 @@
 class FileIO {
 public:
   std::vector<std::string> getentry(int);
+  bool storeentry(int, std::vector<std::string>&);
   bool savefile ();
   FileIO(std::string,std::string,int);
   ~FileIO();
