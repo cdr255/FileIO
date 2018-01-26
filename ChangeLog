@@ -1,4 +1,4 @@
-<!-- -*-markdown-*->
+<!-- -*-markdown-* -->
 # Changelog
 All notable changes to this project will be documented in this file.
 
@@ -7,9 +7,14 @@ and this project adheres to [Semantic Versioning][SemVer].
 
 ## [Unreleased]
 
+
+## [0.1.3] - 2018-01-26
+
+
 ### Added
 
-### Fixed
+- Able to Access, Change, and Save single Entries in CSV file.
+- Basic Checks on changed Entries to prevent a few exploits/mistakes in use.
 
 
 ## [0.1.2] - 2018-01-22
@@ -50,8 +55,9 @@ and this project adheres to [Semantic Versioning][SemVer].
 - Removed Global Variables.
 - Dropped namespace calls.
 
-[0.1.2]: https://github.com/cdr255/FileIO/releases/tag/v0.1.2
-[0.1.1]: https://github.com/cdr255/FileIO/releases/tag/v0.1.1
-[0.1.0]: https://github.com/cdr255/FileIO/releases/tag/v0.1.0
+[0.1.3]: https://github.com/cdr255/libfileio0/releases/tag/v0.1.3
+[0.1.2]: https://github.com/cdr255/libfileio0/releases/tag/v0.1.2
+[0.1.1]: https://github.com/cdr255/libfileio0/releases/tag/v0.1.1
+[0.1.0]: https://github.com/cdr255/libfileio0/releases/tag/v0.1.0
 [SemVer]: http://semver.org/spec/v2.0.0.html
 [KaC]: http://keepachangelog.com/en/1.0.0/
