@@ -98,16 +98,35 @@ std::vector<std::string> FileIO::getentry(int entrynumber)
 
 bool FileIO::storeentry(int entrynumber, std::vector<std::string>& entry)
 {
-  if (entrynumber > entries)
+  
+  int entryoffset = 0;
+  int counter = 0;
+  bool clean = true;
+  for (;counter < rowsize;counter++)
     {
-      printf("Error: Tried to Access Nonexistant entry from File %s", filename.c_str());
+      if (entry.at(counter).find_first_of(",") != std::string::npos)
+	clean = false;
+    }
+      
+  if (!clean)
+    {
+      printf("Error: Attempted to use illegal character when writing to %s.\n", filename.c_str());
+      return false;
+    }
+  else if (entrynumber > entries)
+    {
+      printf("Error: Tried to Access Nonexistant entry from File %s\n", filename.c_str());
+      return false;
+    }
+  else if (entry.size() > rowsize)
+    {
+      printf("Error: Tried to add entry with %d fields when %d fields is expected.\n", entry.size(), rowsize);
       return false;
     }
   else
     {
       int offset = (entrynumber - 1) * rowsize ;
-      int entryoffset = 0;
-      for (int counter = offset; counter < offset + rowsize;counter++)
+      for (counter = offset; counter < offset + rowsize;counter++)
 	{
 	  values.at(counter) = entry.at(entryoffset);
 	  printf("Entry #%d: Replaced '%s' with '%s'. \n", entrynumber, values[counter].c_str(), entry[entryoffset].c_str());
