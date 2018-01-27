@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.10)
-project(fileio VERSION 0.1.2 DESCRIPTION "File Input/Output Library")
+project(fileio VERSION 0.1.3 DESCRIPTION "File Input/Output Library")
 add_executable (csv-rw main.cxx)
 configure_file (data.csv data.csv COPYONLY)
 add_library (fileio SHARED
